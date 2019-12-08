@@ -1,0 +1,29 @@
+<div class="container" *ngIf="(repository$| async)?.length >= 0">
+  <h1>Liste des repositories</h1>
+
+  <ul class="list-group" *ngFor="let repository of (repository$| async)">
+    <li class="list-group-item list-group-item-action">
+      <div class="row">
+        <div class="col-3">
+          <img class="img-thumbnail" style="height: 220px" src="{{ repository.owner.avatar_url }}" alt="{{ repository.owner.login}}">
+        </div>
+        <div class="col-9">
+          <div class="header">
+            <h2>{{ repository.name }}</h2>
+            <p class="small text-muted">{{ repository.full_name }}</p>
+            <p class="d-flex justify-content-between">
+              <small class="text-muted">Created: {{ repository.created_at| date: 'dd/MM/yyyy' }}</small>
+              <small class="text-muted">Updated: {{ repository.updated_at| date: 'dd/MM/yyyy' }}</small>
+              <small class="text-muted">Pushed: {{ repository.pushed_at| date: 'dd/MM/yyyy' }}</small>
+            </p>
+          </div>
+          <p>{{ repository.description }}</p>
+          <div class="btn-group btn-group-toggle">
+            <a href="{{ repository.clone_url }}" target="_blank" class="btn btn-primary btn-sm">Github repository</a>
+            <a href="{{ repository.owner.gists_url }}" target="_blank" class="btn btn-primary btn-sm">Gist</a>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
