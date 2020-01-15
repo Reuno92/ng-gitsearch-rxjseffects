@@ -1,5 +1,7 @@
 # Ng8GitsearchNgrxeffects
 
+Training on NgRx with my github account.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
 ## Development server
