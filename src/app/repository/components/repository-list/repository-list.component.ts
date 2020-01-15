@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
 
-import { RepositoryListLoad } from '../../action/repository.action';
+import {RepositoryListLoad} from '../../action/repository.action';
 import {getAllRepository, getRequestDatetime} from '../../selector/repository.selectors';
 import {RepositoryModels} from '../../models/repository.models';
 import {Observable} from 'rxjs';

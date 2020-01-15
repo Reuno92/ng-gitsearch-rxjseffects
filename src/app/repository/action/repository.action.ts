@@ -1,5 +1,5 @@
-import { Action } from '@ngrx/store';
-import { RepositoryActionTypes } from '../constant/repositoryActionTypes';
+import {Action} from '@ngrx/store';
+import {RepositoryActionTypes} from '../constant/repositoryActionTypes';
 import {RepositoryModels} from '../models/repository.models';
 
 export class RepositoryListLoad implements Action {
