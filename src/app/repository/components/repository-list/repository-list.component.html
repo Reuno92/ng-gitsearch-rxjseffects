@@ -18,6 +18,10 @@
             </p>
           </div>
           <p>{{ repository.description }}</p>
+          <ul class="list-group list-group-horizontal mb-4">
+            <small class="list-group-item" *ngFor="let language of repository.languages | keyvalue: valueAscOrder">
+              <b>{{ language.key }}</b>: {{ getPercentage(repository.languages, language.value) }} %</small>
+          </ul>
           <div class="btn-group btn-group-toggle">
             <a href="{{ repository.clone_url }}" target="_blank" class="btn btn-primary btn-sm">Github repository</a>
             <a href="{{ repository.owner.gists_url }}" target="_blank" class="btn btn-primary btn-sm">Gist</a>

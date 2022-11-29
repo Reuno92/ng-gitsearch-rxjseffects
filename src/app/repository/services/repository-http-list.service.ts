@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {RepositoryModels} from '../models/repository.models';
+import {GenericObject, RepositoryModels} from '../models/repository.models';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,11 @@ export class RepositoryHttpListService {
 
   constructor(private http: HttpClient) { }
 
-  getRepos(): Observable<RepositoryModels[]> {
+  public getRepos(): Observable<RepositoryModels[]> {
     return this.http.get<RepositoryModels[]>(this.reposUrl, { headers: new HttpHeaders(), responseType: 'json'});
+  }
+
+  public getLanguages(url: string): Observable<GenericObject<number>> {
+    return this.http.get<any>(url, { headers: new HttpHeaders(), responseType: 'json'});
   }
 }

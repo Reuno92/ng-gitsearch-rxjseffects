@@ -10,10 +10,15 @@ export class RepositoryModels {
     public updated_at: string,
     public pushed_at: string,
     public owner: RepositoryOwner,
-    public forks_count: number
+    public forks_count: number,
+    public languages: GenericObject<number>,
+    public languages_url: string
   ) {}
 }
 
+export interface GenericObject<T> {
+  [key: string]: T;
+}
 
 export class RepositoryOwner {
 
